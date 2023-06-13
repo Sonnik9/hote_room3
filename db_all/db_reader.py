@@ -41,7 +41,7 @@ def db_opener(n1, n2):
 
         try:
             select_query  = ("SELECT id, hotel_id, url, room FROM upz_hotels "
-            f"WHERE id BETWEEN {n1} AND {n2} "
+            f"WHERE id BETWEEN {p1} AND {p2} "
             )
             cursor.execute(select_query)
             hotels_data = cursor.fetchall()
