@@ -30,14 +30,14 @@ def db_opener(n1, n2):
         except Error as e:
             print(f"Error connecting to MySQL: {e}")
 
-        # try:
-        #     query_last_item = "SELECT COUNT(*) FROM upz_hotels;"
-        #     cursor.execute(query_last_item)
-        #     last_item = cursor.fetchone()[0]
-        #     p2 = int(last_item) - 100000 - int(n1) + 1
-        #     p1 = int(last_item) - 150000 - int(n2) + 1
-        # except:
-        #     pass
+        try:
+            query_last_item = "SELECT COUNT(*) FROM upz_hotels;"
+            cursor.execute(query_last_item)
+            last_item = cursor.fetchone()[0]
+            p2 = int(last_item) - int(n1) + 1
+            p1 = int(last_item) - int(n2) + 1
+        except:
+            pass
 
         try:
             select_query  = ("SELECT id, hotel_id, url, room FROM upz_hotels "

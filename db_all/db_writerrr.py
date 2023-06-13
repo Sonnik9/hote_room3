@@ -78,10 +78,10 @@ def db_wrtr(total, n2):
             changing_hotelsCritery(cursor, conn, whiteList)   
         except:
             pass
-        try:
-           semaforr(conn, cursor, n)
-        except:
-            pass 
+        # try:
+        #    semaforr(conn, cursor, n)
+        # except:
+        #     pass 
         try:
             cursor.close()
             conn.close()
@@ -149,7 +149,7 @@ def writerr_table(conn, cursor, resRooms, resRoomsBlock):
     try:
         query5 = "INSERT INTO upz_hotels_rooms_blocks (hotelid, room_id, room_name, nr_children, max_occupancy, nr_adults) VALUES (%s, %s, %s, %s, %s, %s)"
 
-        batch_size = 250
+        batch_size = 400
         batch_values = []
 
         for item in resRoomsBlock:
